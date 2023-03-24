@@ -9,9 +9,11 @@ let messagesObjects = {
 		"Do the dishes",
 		"Mop the floors",
 		"Dust the house",
+		"Get a haircut",
+		"Shave your dog's butt"
 	],
-	haveDone: ["Making breakfast", "Meal preping", "Grocery shopping"],
-	wantToDo: ["Go on a cruise", "Go to Rome", "Go to Japan"],
+	haveDone: ["Making breakfast", "Meal prepping", "Grocery shopping"],
+	wantToDo: ["go on a cruise", "go to Rome", "go to Japan"],
 };
 
 let personalMessage = [];
@@ -21,17 +23,17 @@ for (let i = 0; i < Object.keys(messagesObjects).length; i++) {
 	switch (messageItem) {
 		case "shouldDo":
 			personalMessage.push(
-				`You should ${messagesObjects[messageItem][messageIndex]} soon.`
+				`You need to ${messagesObjects[messageItem][messageIndex].toLowerCase()} soon.`
 			);
 			break;
 		case "haveDone":
 			personalMessage.push(
-				`Congrats you finished ${messagesObjects[messageItem][messageIndex]}!`
+				`Congrats you finished ${messagesObjects[messageItem][messageIndex].toLowerCase()}!`
 			);
 			break;
 		case "wantToDo":
 			personalMessage.push(
-				`If you keep doing good you can ${messagesObjects[messageItem][messageIndex]}.`
+				`You really need to take a break you should ${messagesObjects[messageItem][messageIndex]}.`
 			);
 			break;
 		default:
@@ -47,4 +49,3 @@ function formatMessage() {
 	console.log(formattedMessage);
 }
 formatMessage();
-
